@@ -53,10 +53,40 @@ const Stem = styled.div`
 `
 
 const Card = styled.div`
-  width: 75%;
-  height: 50vh;
+  width: 30%;
+  height: 250px;
   background-color: white; 
+  margin: 1em; 
 `
+
+const Wave = styled.div` {
+  position: relative;
+  height: 70px;
+  width: 600px;
+  background: #e0efe3;
+}:before {
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 100% 50%;
+        width: 340px;
+    height: 80px;
+    background-color: papayawhip;
+    right: -5px;
+    top: 40px;
+}:after {
+        content: "";
+        display: block;
+        position: absolute;
+        border-radius: 100% 50%;
+        width: 300px;
+    height: 70px;
+    background-color: #e0efe3;
+    left: 0;
+    top: 27px;
+}
+`
+
 
 export default function Home() {
   return (
@@ -66,14 +96,18 @@ export default function Home() {
         <Leaf></Leaf>
         <Stem></Stem>
       </div>
-      <Card>
-         <h1>
-           Hello! My name is Hana. 
-         </h1>
-         <p> I like to promgram software, I like to be curious and learn new things.</p>
+      <div>
+      <Wave></Wave>
          <img alt="me" src={me}>
 
          </img>
+      <Wave></Wave>
+      </div>
+      <Card>
+      <h1>
+           Hello! My name is Hana. 
+         </h1>
+         <p> I like to promgram software, I like to be curious and learn new things.</p>
       </Card>
     </Wrapper>
   )
